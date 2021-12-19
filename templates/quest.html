@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} Ценноcти: опрос по методике Инглхарта{% endblock %}
+
+{% block content %}
+<form action="/process">
+    <fieldset>
+    <legend><b>Опрос, повторяюший исследование проекта World Values Survey</b></legend>
+	<legend><b>Блок 1. Социологические данные</b></legend><br>
+        Ваш год рождения?<br>
+        Например: 1975<br>
+	<input type="text" name="born_year" required pattern='\d+'><br>
+	Укажите, пожалуйста, ваш пол.<br>
+	<input type="radio" name="gender" value="male"> Мужской<br>
+    <input type="radio" name="gender" value="female"> Женский<br>
+    <input type="radio" name="gender" value="other" checked> Другое<br><br>
+	Какое у вас образование?<br>
+    Например: высшее<br>
+	<input type="text" name="education" required pattern='[A-Za-zА-Яа-яЁё\s]+'><br>
+	<br>
+	<legend><b>Блок 2. Ответьте, пожалуйста, на вопросы:</b></legend>
+    Как часто вы себя чувствуете нервным или напряжённым?<br>
+    <input type="radio" name="stress" value="1">Всегда<br>
+    <input type="radio" name="stress" value="2">Обычно<br>
+	<input type="radio" name="stress" value="3">Редко<br>
+    <input type="radio" name="stress" value="4">Иногда<br>
+	<input type="radio" name="stress" value="5">Никогда<br><br>
+	Вы счастливый человек?<br>
+    <input type="radio" name="happiness" value="1">Всегда<br>
+    <input type="radio" name="happiness" value="2">Обычно<br>
+	<input type="radio" name="happiness" value="3">Редко<br>
+    <input type="radio" name="happiness" value="4">Иногда<br>
+	<input type="radio" name="happiness" value="5">Никогда<br><br>
+	Вы гордитесь быть гражданином своей страны?<br>
+    <input type="radio" name="proudness" value="1">Вообще не горжусь<br>
+    <input type="radio" name="proudness" value="2">Не горжусь<br>
+	<input type="radio" name="proudness" value="3">Отчасти горжусь<br>
+    <input type="radio" name="proudness" value="4">Горжусь<br>
+	<input type="radio" name="proudness" value="5">Очень горжусь<br>
+	<br>
+	<legend><b>Блок 3. Прочитайте каждое утвержение и ответьте, насколько вы с ним согласны.</b></legend>
+    Упорный труд - самый надёжный путь к достижению результатов<br>
+    <input type="radio" name="labor" value="1">Полностью согласен<br>
+    <input type="radio" name="labor" value="2">Согласен<br>
+	<input type="radio" name="labor" value="3">Не знаю<br>
+    <input type="radio" name="labor" value="4">Не согласен<br>
+	<input type="radio" name="labor" value="5">Совершенно не согласен<br><br>
+	Необходимо любой ценой избегать создания таких структур, в которых подчинённые будут иметь двух начальников<br>
+    <input type="radio" name="two_leaders" value="1">Полностью согласен<br>
+    <input type="radio" name="two_leaders" value="2">Согласен<br>
+	<input type="radio" name="two_leaders" value="3">Не знаю<br>
+    <input type="radio" name="two_leaders" value="4">Не согласен<br>
+	<input type="radio" name="two_leaders" value="5">Совершенно не согласен<br><br>
+	Правила организации не должны нарушаться, даже если работнику кажется, что это в интересах компании<br>
+    <tr>
+        <input type="radio" name="rules" value="1">Полностью согласен<br>
+        <input type="radio" name="rules" value="2">Согласен<br>
+        <input type="radio" name="rules" value="3">Не знаю<br>
+        <input type="radio" name="rules" value="4">Не согласен<br>
+        <input type="radio" name="rules" value="5">Совершенно не согласен<br>
+        </tr>
+    <p><input type="submit" name="submit" value="Отправить"></p>
+    </fieldset>
+</form>
+<p><a href='/statistics'>Посмотреть статистику</a></p>
+{% endblock %}
